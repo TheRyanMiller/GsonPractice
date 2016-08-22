@@ -1,9 +1,10 @@
 {
-    "book": [
+    "books": [
         {
-            "id" : "978-0641723445",
+            "isbn" : "978-0641723445",
             "cat" : ["book","hardcover"],
             "title" : "The Lightning Thief",
+            "publish_year" : "2001",
             "author" : "Rick Riordan",
             "series_t" : "Percy Jackson and the Olympians",
             "sequence_i" : 1,
@@ -14,8 +15,9 @@
         }
         ,
         {
-            "id" : "978-1423103349",
+            "isbn" : "978-1423103349",
             "cat" : ["book","paperback"],
+            "publish_year" : "2001",
             "title" : "The Sea of Monsters",
             "author" : "Rick Riordan",
             "series_t" : "Percy Jackson and the Olympians",
@@ -27,8 +29,9 @@
         }
         ,
         {
-            "id" : "978-1857995879",
+            "isbn" : "978-1857995879",
             "cat" : ["book","paperback"],
+            "publish_year" : "2001",
             "title" : "Sophie's World : The Greek Philosophers",
             "author" : "Jostein Gaarder",
             "sequence_i" : 1,
@@ -39,8 +42,9 @@
         }
         ,
         {
-            "id" : "978-1933988177",
+            "isbn" : "978-1933988177",
             "cat" : ["book","paperback"],
+            "publish_year" : "2001",
             "title" : "Lucene in Action, Second Edition",
             "author" : "Michael McCandless",
             "sequence_i" : 1,
