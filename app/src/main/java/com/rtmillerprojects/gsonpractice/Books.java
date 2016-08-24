@@ -34,6 +34,9 @@ public class Books {
         this.bookList = bookList;
     }
 
+    public Book getBook(int idx){
+        return this.bookList.get(idx);
+    }
 
     public String getLinkTemplate() {
         return linkTemplate;

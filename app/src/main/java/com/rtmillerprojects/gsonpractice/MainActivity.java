@@ -6,27 +6,26 @@ import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonParser;
 
-import org.json.JSONException;
-import org.json.JSONObject;
+import org.w3c.dom.Text;
 
-import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
 
 public class MainActivity extends AppCompatActivity {
 
+    TextView tv;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        tv = (TextView) findViewById(R.id.maintext);
 
         GsonBuilder gsonBuilder = new GsonBuilder()
-                .registerTypeAdapter(Books.class, new BookDeserializer());
+                .registerTypeAdapterFactory(new ItemTypeAdapterFactory())
+                .registerTypeAdapter(Book.class, new BookDeserializer());
         Gson gson = gsonBuilder.create();
 
         InputStream is = this.getResources().openRawResource(R.raw.samplebookjson);
@@ -53,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         */
         //Book books = gson.fromJson(reader, Book.class);
         Books booklist = gson.fromJson(reader, Books.class);
+        tv.setText(booklist.getBook(1).getTitle());
         //final Book[] books = jsonObj.get("books"), Book[].class;
         //System.out.println(book);
 

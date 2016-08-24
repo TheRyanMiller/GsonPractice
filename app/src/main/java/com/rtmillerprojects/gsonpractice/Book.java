@@ -1,16 +1,26 @@
 package com.rtmillerprojects.gsonpractice;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 /**
  * Created by Ryan on 8/14/2016.
  */
 public class Book {
 
-    private int publishYear;
-    private String[] authors;
-    private String isbn;
-    private String title;
+    @Expose
+    @SerializedName("publish_year")
+    public String publishYear;
+    @Expose
+    public String[] authors;
+    @Expose
+    @SerializedName("isbn")
+    public String isbn;
+    @Expose
+    public String title;
 
-    public void setPublishYear(int publishYear) {
+
+    public void setPublishYear(String publishYear) {
         this.publishYear = publishYear;
     }
 
@@ -24,7 +34,7 @@ public class Book {
 
     public void setIsbn(String isbn) {this.isbn = isbn; }
 
-    public int getPublishYear() {
+    public String getPublishYear() {
         return publishYear;
     }
 
@@ -33,8 +43,6 @@ public class Book {
     }
 
     public String getIsbn() {return isbn;}
-
-
 
     public String getTitle() {
         return title;
